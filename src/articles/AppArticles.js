@@ -14,9 +14,6 @@ export default class AppArticles extends React.Component
     constructor(props) {
         super(props);
 
-        this.onToggleShowAdd = this.onToggleShowAdd.bind(this);
-        this.onFilterArticles = this.onFilterArticles.bind(this);
-
         this.state = {
             showAdd: false,
             filteredArticles: JSON.parse(articlesData)
@@ -46,7 +43,7 @@ export default class AppArticles extends React.Component
         )
     }
 
-    onFilterArticles(event) {
+    onFilterArticles = (event) => {
         const text = event.currentTarget.value;
         this.getFilteredArticlesForText(text).then(filteredArticles => {
             this.setState({
@@ -57,7 +54,7 @@ export default class AppArticles extends React.Component
 
     }
 
-    onToggleShowAdd(event) {
+    onToggleShowAdd = (event) => {
         event.preventDefault();
         this.setState(prevState => {
             return {

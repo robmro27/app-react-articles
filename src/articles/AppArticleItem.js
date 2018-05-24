@@ -5,9 +5,6 @@ export default class AppArticleItem extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onPriorityAdd = this.onPriorityAdd.bind(this);
-        this.onPriorityRemove = this.onPriorityRemove.bind(this);
-
         this.state = {
             priority: 0,
         };
@@ -36,7 +33,7 @@ export default class AppArticleItem extends React.Component {
         )
     }
 
-    onPriorityAdd(event) {
+    onPriorityAdd = (event) => {
         event.preventDefault();
         this.setState( prevState => {
                 return {
@@ -45,7 +42,7 @@ export default class AppArticleItem extends React.Component {
             }
         )}
 
-    onPriorityRemove(event) {
+    onPriorityRemove = (event) => {
         event.preventDefault();
         this.setState( prevState => {
                 return {

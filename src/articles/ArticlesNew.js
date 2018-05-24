@@ -7,11 +7,6 @@ export default class AppArticlesNew extends React.Component {
     constructor(props) {
         super(props)
 
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onSubtitleChange = this.onSubtitleChange.bind(this);
-        this.onContentChange = this.onContentChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
             title: '',
             subtitle: '',
@@ -61,19 +56,19 @@ export default class AppArticlesNew extends React.Component {
 
     }
 
-    onTitleChange(event) {
+    onTitleChange = (event) => {
         this.setState({title: event.target.value})
     }
 
-    onSubtitleChange(event) {
+    onSubtitleChange = (event) => {
         this.setState({subtitle: event.target.value})
     }
 
-    onContentChange(event) {
+    onContentChange = (event) => {
         this.setState({content: event.target.value})
     }
 
-    onSubmit(event) {
+    onSubmit = (event) => {
         event.preventDefault();
         this.setState({autoSaveInForward:120});
     }
