@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme'
 
-import AppArticlesList from './articles/AppArticlesList';
-import AppArticleItem from './articles/AppArticleItem';
+import AppArticlesList from '../articles/AppArticlesList';
+import AppArticleItem from '../articles/AppArticleItem';
 
 it('show message when there are no articles', () => {
     const articlesList = shallow(<AppArticlesList articles={[]} />)

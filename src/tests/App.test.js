@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import App from './App';
-import AppHeader from './AppHeader';
-import AppBody from './AppBody';
-import AppFooter from './AppFooter';
+import App from '../App';
+import AppHeader from '../AppHeader';
+import AppBody from '../AppBody';
+import AppFooter from '../AppFooter';
 
 it('renders without crashing', () => {
   shallow(<App/>)
