@@ -13,6 +13,10 @@ export default class AppArticles extends React.Component
 {
     constructor(props) {
         super(props);
+
+        this.onToggleShowAdd = this.onToggleShowAdd.bind(this);
+        this.onFilterArticles = this.onFilterArticles.bind(this);
+
         this.state = {
             showAdd: false,
             filteredArticles: JSON.parse(articlesData)
@@ -28,14 +32,14 @@ export default class AppArticles extends React.Component
                 <div className="row">
                     <div className="col-md-3">
                         <div className="form-group">
-                            <input onInput={this.onFilterArticles.bind(this)} type="search" className="form-control" placeholder="Search articles..."/>
+                            <input onInput={this.onFilterArticles} type="search" className="form-control" placeholder="Search articles..."/>
                         </div>
                     </div>
                 </div>
 
                 <AppArticlesList articles={this.state.filteredArticles}/>
 
-                <a href="#" onClick={this.onToggleShowAdd.bind(this)}>{(this.state.showAdd) ? 'Hide' : 'Show'} form</a>
+                <a href="#" onClick={this.onToggleShowAdd}>{(this.state.showAdd) ? 'Hide' : 'Show'} form</a>
                 {this.state.showAdd && <AppArticlesNew />}
 
             </div>

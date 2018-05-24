@@ -4,6 +4,10 @@ export default class AppArticleItem extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.onPriorityAdd = this.onPriorityAdd.bind(this);
+        this.onPriorityRemove = this.onPriorityRemove.bind(this);
+
         this.state = {
             priority: 0,
         };
@@ -22,9 +26,9 @@ export default class AppArticleItem extends React.Component {
 
                     <div>
                         Priority <br />
-                        <a href="#" onClick={this.onPriorityAdd.bind(this)}>+</a>&nbsp;
+                        <a href="#" onClick={this.onPriorityAdd}>+</a>&nbsp;
                         <output>{this.state.priority}</output>
-                        &nbsp;<a href="#" onClick={this.onPriorityRemove.bind(this)}>-</a>
+                        &nbsp;<a href="#" onClick={this.onPriorityRemove}>-</a>
                     </div>
 
                 </div>
