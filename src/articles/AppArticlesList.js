@@ -13,7 +13,7 @@ const AppArticlesList = ({articles}) => {
     }
 
     return (
-        <p>No results</p>
+        <p>No results!</p>
     )
 }
 
