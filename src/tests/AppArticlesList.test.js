@@ -31,3 +31,17 @@ describe('list of articles', () => {
         })
     })
 })
+
+describe('change props', () => {
+    const articles = [{"id":"1","title":"title1","subtitle":"subtitle1","content":"content1"},{"id":"2","title":"title2","subtitle":"subtitle2","content":"content2"}];
+    const articlesChanged = [{"id":"3","title":"title3","subtitle":"subtitle3","content":"content3"},{"id":"4","title":"title4","subtitle":"subtitle4","content":"content4"}];
+    const articlesList = shallow(<AppArticlesList articles={articles}/>)
+
+    articlesList.setProps({articles:articlesChanged})
+
+    articlesChanged.forEach(article => {
+        it(`includes title ${article.title} on list`, () => {
+            expect(articlesList.containsMatchingElement(<AppArticleItem key={article.id} title={article.title} subtitle={article.subtitle} content={article.content}/>));
+        })
+    })
+})

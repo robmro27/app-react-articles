@@ -43,7 +43,6 @@ export default class AppArticles extends React.Component
     }
 
     onFilterArticles(event) {
-        event.preventDefault();
         const text = event.currentTarget.value;
         this.getFilteredArticlesForText(text).then(filteredArticles => {
             this.setState({
