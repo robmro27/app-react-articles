@@ -16,7 +16,7 @@ export default class AppArticles extends React.Component
 
         this.state = {
             showAdd: false,
-            filteredArticles: JSON.parse(articlesData)
+            filteredArticles: JSON.parse(articlesData),
         }
     }
 
@@ -34,7 +34,7 @@ export default class AppArticles extends React.Component
                     </div>
                 </div>
 
-                <AppArticlesList articles={this.state.filteredArticles}/>
+                <AppArticlesList on articles={this.state.filteredArticles}/>
 
                 <a href="#" onClick={this.onToggleShowAdd}>{(this.state.showAdd) ? 'Hide' : 'Show'} form</a>
                 {this.state.showAdd && <AppArticlesNew />}

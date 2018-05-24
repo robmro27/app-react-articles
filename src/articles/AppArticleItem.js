@@ -12,12 +12,12 @@ export default class AppArticleItem extends React.Component {
 
     render() {
 
-        const {title, subtitle, content} = this.props
+        const {title, subtitle, content, onArticleSelected} = this.props
 
         return (
             <div className="card mr-5 mb-5" style={{width: '30rem', float: 'left'}}>
                 <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
+                    <h5 onClick={onArticleSelected.bind(null, title)} className="card-title">{title}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{subtitle}</h6>
                     <p className="card-text">{content}</p>
 
